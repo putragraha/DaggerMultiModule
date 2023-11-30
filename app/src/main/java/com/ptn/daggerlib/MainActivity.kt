@@ -2,7 +2,6 @@ package com.ptn.daggerlib
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.ptn.mylibrary.FirstDependency
 import com.ptn.mylibrary.SomeLib
 
 class MainActivity : AppCompatActivity() {
@@ -10,8 +9,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val someLib = SomeLib(FirstDependency())
+        val someLib = SomeLib(AppSecondDependency())
 
-        someLib()
+        someLib.invoke()
     }
 }

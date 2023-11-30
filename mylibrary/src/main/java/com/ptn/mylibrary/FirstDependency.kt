@@ -1,19 +1,11 @@
 package com.ptn.mylibrary
 
 import android.util.Log
-import javax.inject.Inject
+import com.ptn.mylibrary.Constant.TAG
 
-class FirstDependency @Inject constructor() {
+class FirstDependency {
 
-    @Inject
-    lateinit var secondDependency: SecondDependency
-
-    operator fun invoke() {
-        secondDependency()
-        Log.i(TAG, "invoke: ")
-    }
-
-    companion object {
-        private const val TAG = "FirstDependency"
+    operator fun invoke(value: String) {
+        Log.i(TAG, "invoked from First Dependency in Lib, source: $value")
     }
 }
